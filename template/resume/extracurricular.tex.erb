@@ -1,0 +1,14 @@
+\cvsection{<%= @extracurricular_title %>}
+\begin{cventries}
+  <% @extracurriculars.each do |ext| %>
+    \cventry
+      {<%= ext['title'] %>}
+      {<%= ext['location'] %>}
+      {<%= ext['date'] %>}
+      {
+        \begin{cvitems}
+          \item {<%= ext['description'] %>}
+        \end{cvitems}
+      }
+  <% end %>
+\end{cventries}

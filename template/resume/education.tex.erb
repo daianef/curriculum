@@ -1,0 +1,15 @@
+\cvsection{<%= @education_title %>}
+\begin{cventries}
+  <% for @education.each do |edu| %>
+    \cventry
+      {<%= edu['degree'] %>}
+      {<%= edu['institute'] %>}
+      {}
+      {<%= edu['start_date'] %> - <%= edu['end_date'] %>}
+      {
+        \begin{cvitems}
+          \item {<%= edu['description'] %>}
+        \end{cvitems}
+      }
+  <% end %>
+\end{cventries}

@@ -1,0 +1,101 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+\documentclass[11pt, a4paper]{awesome-cv}
+
+%%% Override a directory location for fonts(default: 'fonts/')
+\fontdir[fonts/]
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{resume/}
+
+%%% Override color
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%% Color for highlight
+% Define your custom color if you don't like awesome colors
+\colorlet{awesome}{awesome-red}
+%\definecolor{awesome}{HTML}{CA63A8}
+%% Colors for text
+%\definecolor{darktext}{HTML}{414141}
+%\definecolor{text}{HTML}{414141}
+%\definecolor{graytext}{HTML}{414141}
+%\definecolor{lighttext}{HTML}{414141}
+
+%%% Override a separator for social informations in header(default: ' | ')
+%\headersocialsep[\quad\textbar\quad]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     3rd party packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Needed to divide into several files
+\usepackage{import}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Personal Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Essentials
+\name{<%= @first_name %>}{<%= @middle_name %> <%= @last_name %>}
+\address{<%= @address %>}
+  \mobile{<%= @phones %>}
+%%% Social
+\email{<%= @email %>}
+<% if @homepage %>
+  \homepage{<%= @homepage %>}
+<% end %>
+<% if @github %>
+  \github{<%= @github %>}
+<% end %>
+<% if @linkedin %>
+  \linkedin{<%= @linkedin %>}
+<% end %>
+%%% Optionals
+<% if @positions %>
+  \position{<%= @positions %>}
+<% end %>
+%\position{Desenvolvimento de software{\enskip\cdotp\enskip}DevOps{\enskip\cdotp\enskip}Automação}
+<% if @goal %>
+  \quote{<%= @goal %>}
+<% end %>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
+\makecvfooter
+  {\today}
+  {<%= @first_name @last_name %> ~~~·~~~ Curriculum}
+  {\thepage}
+
+\begin{document}
+%%% Make a header for CV with personal data
+\makecvheader
+
+%%% Import contents
+\import{\sectiondir}{<%= @skills_file %>}
+\import{\sectiondir}{<%= @education_file %>}
+\import{\sectiondir}{<%= @experience_file %>}
+\import{\sectiondir}{<%= @languages_file %>}
+\import{\sectiondir}{<%= @extracurricular_file %>}
+
+\end{document}
