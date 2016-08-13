@@ -1,0 +1,48 @@
+---
+- hosts: all
+  vars:
+  remote_user: vagrant
+  tasks:
+  - name: Copy RVM
+    copy: src=rvm-stable.tar.gz dest=/home/vagrant
+
+  - name: Prepare RVM setup
+    file: state=directory dest=/home/vagrant/rvm
+
+  - name: Unpack RVM
+    shell: "tar --strip-components=1 -xzf ../rvm-stable.tar.gz"
+    args:
+      chdir: /home/vagrant/rvm
+
+  - name: Install RVM
+    shell: "./install --auto-dotfiles"
+    args:
+      chdir: /home/vagrant/rvm
+
+  - name: Install nodejs
+    apt: name=nodejs state=present update_cache=yes
+    sudo: yes
+
+  - name: Install postgresql
+    apt: name=postgresql state=present update_cache=yes
+    sudo: yes
+
+  - name: Install postgresql-contrib
+    apt: name=postgresql-contrib state=present update_cache=yes
+    sudo: yes
+
+  - name: Install libpq-dev
+    apt: name=libpq-dev state=present update_cache=yes
+    sudo: yes
+
+  - name: Copy Ruby
+    copy: src=ruby-2.3.0.tar.bz2 dest=/home/vagrant/.rvm/archives
+
+  - name: Install Ruby and Rails
+    script: install-ruby.sh
+
+  - name: Install gems
+    bundler: state=present chdir=/vagrant/curriculum executable=/home/vagrant/.rvm/gems/ruby-2.3.0/wrappers/bundle
+
+
+
