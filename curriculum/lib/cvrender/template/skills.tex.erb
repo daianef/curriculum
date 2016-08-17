@@ -1,0 +1,11 @@
+\cvsection{<%= @structure.get_section_title_by_file(__FILE__) %>}
+<% @skills.each_pair do |category, items| %>
+  \cvsubsection{<%= category %>}
+  \begin{cvhonors}
+    \cvhonor
+    {<%= items.join("{\\enskip\\cdotp\\enskip}") %>}
+    {}
+    {}
+    {}
+  \end{cvhonors}
+<% end %>

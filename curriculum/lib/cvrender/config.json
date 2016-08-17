@@ -1,0 +1,25 @@
+{
+  "main_file": "template/resume.tex.erb",
+  "sections": {
+    "1": {
+      "title": "Skills",
+      "file": "template/skills.tex.erb"
+    },
+    "2": {
+      "title": "Formação Acadêmica",
+      "file": "template/education.tex.erb"
+    },
+    "3": {
+      "title": "Experiência Profissional",
+      "file": "template/experience.tex.erb"
+    },
+    "4": {
+      "title": "Idiomas",
+      "file": "template/languages.tex.erb"
+    },
+    "5": {
+      "title": "Informações Adicionais",
+      "file": "template/extracurricular.tex.erb"
+    }
+  }
+}

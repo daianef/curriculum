@@ -1,0 +1,17 @@
+\cvsection{<%= @structure.get_section_title_by_file(__FILE__) %>}
+\begin{cventries}
+  <% @experiences.each do |exp| %>
+    \cventry
+      {<%= exp['designation'] %>}
+      {<%= exp['company'] %>}
+      {}
+      {<%= exp['start_date'] %> - <%= exp['end_date'] %>}
+      {
+        \begin{cvitems}
+          <% exp['activities'].each do |act| %>
+            \item {<%= act %>}
+          <% end %>
+        \end{cvitems}
+      }
+  <% end %>
+\end{cventries}

@@ -1,6 +1,6 @@
-\cvsection{<%= @education_title %>}
+\cvsection{<%= @structure.get_section_title_by_file(__FILE__) %>}
 \begin{cventries}
-  <% for @education.each do |edu| %>
+  <% @educations.each do |edu| %>
     \cventry
       {<%= edu['degree'] %>}
       {<%= edu['institute'] %>}
@@ -8,7 +8,9 @@
       {<%= edu['start_date'] %> - <%= edu['end_date'] %>}
       {
         \begin{cvitems}
-          \item {<%= edu['description'] %>}
+          <% edu['descriptions'].each do |desc| %>
+            \item {<%= desc %>}
+          <% end %>
         \end{cvitems}
       }
   <% end %>

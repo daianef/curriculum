@@ -1,6 +1,6 @@
-\cvsection{<%= @extracurricular_title %>}
+\cvsection{<%= @structure.get_section_title_by_file(__FILE__) %>}
 \begin{cventries}
-  <% @extracurriculars.each do |ext| %>
+  <% @extracurriculars.to_a.each do |ext| %>
     \cventry
       {<%= ext['title'] %>}
       {<%= ext['location'] %>}

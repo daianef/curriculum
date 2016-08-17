@@ -55,8 +55,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Essentials
 \name{<%= @first_name %>}{<%= @middle_name %> <%= @last_name %>}
-\address{<%= @address %>}
-  \mobile{<%= @phones %>}
+  \address{<%= @street %> - <%= @city %>, <%= @state %>}
+\mobile{<%= @phones.join("{\\enskip\\cdotp\\enskip}") %>}
 %%% Social
 \email{<%= @email %>}
 <% if @homepage %>
@@ -70,9 +70,8 @@
 <% end %>
 %%% Optionals
 <% if @positions %>
-  \position{<%= @positions %>}
+  \position{<%= @positions.join("{\\enskip\\cdotp\\enskip}") %>}
 <% end %>
-%\position{Desenvolvimento de software{\enskip\cdotp\enskip}DevOps{\enskip\cdotp\enskip}Automação}
 <% if @goal %>
   \quote{<%= @goal %>}
 <% end %>
@@ -84,7 +83,7 @@
 %%% Make a footer for CV with three arguments(<left>, <center>, <right>)
 \makecvfooter
   {\today}
-  {<%= @first_name @last_name %> ~~~·~~~ Curriculum}
+  {<%= @first_name %> <%= @last_name %> ~~~·~~~ Curriculum}
   {\thepage}
 
 \begin{document}
@@ -92,10 +91,8 @@
 \makecvheader
 
 %%% Import contents
-\import{\sectiondir}{<%= @skills_file %>}
-\import{\sectiondir}{<%= @education_file %>}
-\import{\sectiondir}{<%= @experience_file %>}
-\import{\sectiondir}{<%= @languages_file %>}
-\import{\sectiondir}{<%= @extracurricular_file %>}
+<% @structure.get_sections_files().each do |file| %>
+\import{\sectiondir}{<%= File.basename(file, ".erb") %>}
+<% end %>
 
 \end{document}
