@@ -1,25 +1,26 @@
 {
-  "main_file": "template/resume.tex.erb",
+  "path": "templates/awesome-cv",
+  "main_file": "resume.tex.erb",
   "sections": {
     "1": {
       "title": "Skills",
-      "file": "template/skills.tex.erb"
+      "file": "skills.tex.erb"
     },
     "2": {
       "title": "Formação Acadêmica",
-      "file": "template/education.tex.erb"
+      "file": "education.tex.erb"
     },
     "3": {
       "title": "Experiência Profissional",
-      "file": "template/experience.tex.erb"
+      "file": "experience.tex.erb"
     },
     "4": {
       "title": "Idiomas",
-      "file": "template/languages.tex.erb"
+      "file": "languages.tex.erb"
     },
     "5": {
       "title": "Informações Adicionais",
-      "file": "template/extracurricular.tex.erb"
+      "file": "extracurricular.tex.erb"
     }
   }
 }

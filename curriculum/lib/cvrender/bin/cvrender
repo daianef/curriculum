@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+$: << File.expand_path(File.join(File.dirname(__FILE__), '../lib'))
+
+require 'json'
+require 'cvrender'
+require 'cvconfig'
+
+def main
+  cvfile = ARGV[0]
+  configfile = ARGV[1] || '../config/awesome-cv.json'
+  outputname = 'CV-daiane'
+  outputdir = '../output'
+  basepath = File.expand_path("..") 
+  config = CVConfig.new(configfile, basepath)
+  render = CVRender.new(JSON.parse(File.read(ARGV[0])), config)
+  render.render(outputname, outputdir)
+end
+
+if __FILE__ == $0
+  main()
+end

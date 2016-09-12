@@ -1,0 +1,13 @@
+\cvsection{<%= @config.get_section_title_by_file(__FILE__) %>}
+<% @languages.each_pair do |idiom, levels| %>
+  \cvsubsection{<%= idiom %>}
+  \begin{cvhonors}
+    <% levels.each_pair do |comunication, level| %>
+      \cvhonor
+      {<%= comunication %>}
+      {<%= level %>}
+      {}
+      {}
+    <% end %>
+  \end{cvhonors}
+<% end %>

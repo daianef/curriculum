@@ -1,0 +1,62 @@
+{
+  "first_name": "Daiane",
+  "middle_name": "Azevedo de",
+  "last_name": "Fraga",
+  "email": "daiane.a.fraga@gmail.com",
+  "homepage": "",
+  "github": "",
+  "linkedin": "https://www.linkedin.com/in/daiane-azevedo-de-fraga-7a1683121",
+  "goal": "Desenvolvimento de soluções em software voltado à automação e práticas DevOps",
+  "positions": ["Desenvolvedora de software", "DevOps", "Automação"],
+  "street": "Rua Otávio Schemes, 2525",
+  "complement": "",
+  "city": "Gravataí",
+  "state": "RS",
+  "country": "Brasil",
+  "phones": ["(51) 98218063", "(51) 31062302"],
+  "educations": [
+    {
+      "institute": "Pontifícia Universidade Católica do Rio Grande do Sul",
+      "start_date": "2007",
+      "end_date": "2014",
+      "degree": "Engenharia de Computação",
+      "descriptions": [
+        "Bolsista do PET-Inf (Programa de Educação Tutorial da Faculdade de Informática) durante 1 ano e 1 mês, atuando com pesquisa e desenvolvimento de plataformas de educação à distância na PUCRS Virtual.",
+        "Prêmio de Aluno Destaque da turma por melhor desempenho."
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "DATACOM",
+      "designation": "DevOps",
+      "start_date": "jun/2014",
+      "end_date": "ago/2016",
+      "activities": ["Test 1", "Test 2"]
+    },
+    {
+      "company": "DATACOM",
+      "designation": "Automação de Testes",
+      "start_date": "fev/2011",
+      "end_date": "mai/2014",
+      "activities": ["Test 1", "Test 2"]
+    }
+  ],
+  "skills": {
+    "Linguagens/scripting": ["Ruby", "Python", "Groovy", "Java"],
+    "Web": ["Ruby on Rails", "HTML", "CSS", "JavaScript (JQuery, Bootstrap)", "Ajax", "PHP"],
+    "Banco de Dados": ["MySQL", "PostgreSQL", "MariaDB"],
+    "Metodologias/frameworks ágeis": ["Scrum", "XP", "Kanban"],
+    "Integração contínua": ["Jenkins + Gerrit"],
+    "Virtualização/containers": ["Vagrant", "VirtualBox", "KVM", "oVirt", "Docker"],
+    "Provisionamento": ["Ansible", "Shell"],
+    "Outros": ["TDD", "Linux", "Git", "Zabbix", "Nagios", "Apache", "Nginx", "Bugzilla", "Rally", "Testlink"]
+  },
+  "languages": {
+    "Inglês": {
+      "Leitura": "Avançado",
+      "Escrita": "Avançado",
+      "Conversação": "Básico"
+    }
+  }
+}
